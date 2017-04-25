@@ -1,0 +1,168 @@
+- name: Install fonts tap
+  homebrew_tap:
+    name: caskroom/fonts
+    state: present
+
+- name: Install cask tap
+  homebrew_tap:
+    name: caskroom/cask
+    state: present
+
+- name: Install homebrew package | python
+  homebrew:
+    name: python
+    state: latest
+
+- name: Install homebrew package | vim
+  homebrew:
+    name: vim
+    state: latest
+
+- name: Install homebrew package | fasd
+  homebrew:
+    name: fasd
+    state: latest
+
+- name: Install homebrew package | tmux
+  homebrew:
+    name: tmux
+    state: latest
+
+- name: Install homebrew package | reattach-to-user-namespace
+  homebrew:
+    name: reattach-to-user-namespace
+    state: latest
+
+- name: Install homebrew package | stow
+  homebrew:
+    name: stow
+    state: latest
+
+- name: Install homebrew package from cask | alfred
+  homebrew_cask:
+    name: alfred
+    state: present
+
+- name: Install homebrew package from cask | sublime-text
+  homebrew_cask:
+    name: sublime-text
+    state: present
+
+- name: Install homebrew package from cask | google-chrome
+  homebrew_cask:
+    name: google-chrome
+    state: present
+
+- name: Install homebrew package from cask | firefox
+  homebrew_cask:
+    name: firefox
+    state: present
+
+#- name: Install homebrew package from cask | iterm2
+#  homebrew_cask:
+#    name: iterm2
+#    state: present
+
+- name: Install homebrew package from cask | vlc
+  homebrew_cask:
+    name: vlc
+    state: present
+
+- name: Install homebrew package from cask | skype
+  homebrew_cask:
+    name: skype
+    state: present
+
+- name: Install homebrew package from cask | intellij-idea
+  homebrew_cask:
+    name: intellij-idea
+    state: present
+
+- name: Install homebrew package from cask | pycharm
+  homebrew_cask:
+    name: pycharm
+    state: present
+
+- name: Install homebrew package from cask | jetbrains-toolbox
+  homebrew_cask:
+    name: jetbrains-toolbox
+    state: present
+
+- name: Install homebrew package from cask | webstorm
+  homebrew_cask:
+    name: webstorm
+    state: present
+
+- name: Install homebrew package from cask | phpstorm
+  homebrew_cask:
+    name: phpstorm
+    state: present
+
+- name: Install homebrew package from cask | clion
+  homebrew_cask:
+    name: clion
+    state: present
+
+- name: Install homebrew package from cask | datagrip
+  homebrew_cask:
+    name: datagrip
+    state: present
+
+- name: Install homebrew package from cask | rubymine
+  homebrew_cask:
+    name: rubymine
+    state: present
+
+- name: Install homebrew package from cask | gogland
+  homebrew_cask:
+    name: gogland
+    state: present
+
+- name: Install homebrew package from cask | youtrack
+  homebrew_cask:
+    name: youtrack-workflow
+    state: present
+
+- name: Install homebrew package from cask | tower
+  homebrew_cask:
+    name: tower
+    state: present
+
+- name: Install homebrew package from cask | kaleidoscope
+  homebrew_cask:
+    name: kaleidoscope
+    state: present
+
+- name: Install homebrew package from cask | visual-studio-code
+  homebrew_cask:
+    name: visual-studio-code
+    state: present
+
+- name: Install homebrew package from cask | atom
+  homebrew_cask:
+    name: atom
+    state: present
+
+- name: Install homebrew package from cask | hammerspoon
+  homebrew_cask:
+    name: hammerspoon
+    state: present
+
+- name: Copy hammerspoon configuration file
+  copy: 
+    src: ../files/init.lua
+    dest: "{{ lookup('env','HOME') }}/.hammerspoon/"
+
+- name: Install homebrew package from cask | spotify
+  homebrew_cask:
+    name: spotify
+    state: present
+
+- name: Install homebrew package from cask | caffeine
+  homebrew_cask:
+    name: caffeine
+    state: present
+
+
+
+
