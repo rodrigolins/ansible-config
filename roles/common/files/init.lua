@@ -1,9 +1,31 @@
+-- Hammerspoon config
 -----------------------------------------------
 -- Set up
 -----------------------------------------------
 
 local hyper = {"cmd", "alt", "ctrl"}
 hs.window.animationDuration = 0
+
+-----------------------------------------------
+-- hyper f for fullscreen
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'f', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x
+        f.y = max.y
+        f.w = max.w
+        f.h = max.h
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
 
 -----------------------------------------------
 -- hyper d for left one half window
@@ -48,31 +70,10 @@ hs.hotkey.bind(hyper, 'g', function()
 end)
 
 -----------------------------------------------
--- hyper f for fullscreen
+-- hyper e for top left one quarter window
 -----------------------------------------------
 
-hs.hotkey.bind(hyper, 'f', function()
-    if hs.window.focusedWindow() then
-        local win = hs.window.focusedWindow()
-        local f = win:frame()
-        local screen = win:screen()
-        local max = screen:frame()
-
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w
-        f.h = max.h
-        win:setFrame(f)
-    else
-        hs.alert.show("No active window")
-    end
-end)
-
------------------------------------------------
--- hyper r for top left one quarter window
------------------------------------------------
-
-hs.hotkey.bind(hyper, 'r', function()
+hs.hotkey.bind(hyper, 'e', function()
     if hs.window.focusedWindow() then
         local win = hs.window.focusedWindow()
         local f = win:frame()
@@ -90,27 +91,6 @@ hs.hotkey.bind(hyper, 'r', function()
 end)
 
 -----------------------------------------------
--- hyper r for top left one quarter window
------------------------------------------------
-
-hs.hotkey.bind(hyper, 'e', function()
-    if hs.window.focusedWindow() then
-        local win = hs.window.focusedWindow()
-        local f = win:frame()
-        local screen = win:screen()
-        local max = screen:frame()
-
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w / 3 * 2
-        f.h = max.h
-        win:setFrame(f)
-    else
-        hs.alert.show("No active window")
-    end
-end)
-
------------------------------------------------
 -- hyper t for top right one quarter window
 -----------------------------------------------
 
@@ -121,29 +101,8 @@ hs.hotkey.bind(hyper, 't', function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x + (max.w / 3)
+        f.x = max.x  + (max.w / 2)
         f.y = max.y
-        f.w = max.w / 3 * 2
-        f.h = max.h
-        win:setFrame(f)
-    else
-        hs.alert.show("No active window")
-    end
-end)
-
------------------------------------------------
--- hyper v for bottom left one quarter window
------------------------------------------------
-
-hs.hotkey.bind(hyper, 'v', function()
-    if hs.window.focusedWindow() then
-        local win = hs.window.focusedWindow()
-        local f = win:frame()
-        local screen = win:screen()
-        local max = screen:frame()
-
-        f.x = max.x + (max.w / 2)
-        f.y = max.y + (max.h / 2)
         f.w = max.w / 2
         f.h = max.h / 2
         win:setFrame(f)
@@ -167,6 +126,111 @@ hs.hotkey.bind(hyper, 'c', function()
         f.y = max.y + (max.h / 2)
         f.w = max.w / 2
         f.h = max.h / 2
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
+
+-----------------------------------------------
+-- hyper b for bottom left one quarter window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'b', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x + (max.w / 2)
+        f.y = max.y + (max.h / 2)
+        f.w = max.w / 2
+        f.h = max.h / 2
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
+
+-----------------------------------------------
+-- hyper w for left two thirds window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'w', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x
+        f.y = max.y
+        f.w = max.w / 3 * 2
+        f.h = max.h
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
+
+-----------------------------------------------
+-- hyper y for right one third window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'y', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x + (max.w / 3 * 2 )
+        f.y = max.y
+        f.w = max.w / 3
+        f.h = max.h
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
+
+-----------------------------------------------
+-- hyper n for right two thirds window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'n', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x + (max.w / 3)
+        f.y = max.y
+        f.w = max.w / 3 * 2
+        f.h = max.h
+        win:setFrame(f)
+    else
+        hs.alert.show("No active window")
+    end
+end)
+
+-----------------------------------------------
+-- hyper x for left one third window
+-----------------------------------------------
+
+hs.hotkey.bind(hyper, 'x', function()
+    if hs.window.focusedWindow() then
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x
+        f.y = max.y
+        f.w = max.w / 3
+        f.h = max.h
         win:setFrame(f)
     else
         hs.alert.show("No active window")
@@ -226,4 +290,3 @@ hs.hotkey.bind(hyper, 'h', function()
         hs.alert.show("No active window")
     end
 end)
-
