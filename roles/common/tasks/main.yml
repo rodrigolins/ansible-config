@@ -163,9 +163,12 @@
     name: caffeine
     state: present
 
-- name: Install homebrew package from cask | Franz
+#- name: Install homebrew package from cask | Franz
+#  homebrew_cask:
+#    name: franz
+#    state: present
+
+- name: Install homebrew package from cask | 1password
   homebrew_cask:
-    name: franz
+    name: 1password
     state: present
-
-
