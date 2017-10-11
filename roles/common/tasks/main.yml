@@ -163,6 +163,9 @@
     name: caffeine
     state: present
 
-
+- name: Install homebrew package from cask | Franz
+  homebrew_cask:
+    name: franz
+    state: present
 
 
