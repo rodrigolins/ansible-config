@@ -177,3 +177,8 @@
   homebrew_cask:
     name: 1password
     state: present
+ 
+ - name: Install homebrew package from cask | Fliqlo
+  homebrew_cask:
+    name: fliqlo
+    state: present
