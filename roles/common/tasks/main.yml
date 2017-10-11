@@ -48,10 +48,10 @@
     name: sublime-text
     state: present
 
-- name: Install homebrew package from cask | google-chrome
-  homebrew_cask:
-    name: google-chrome
-    state: present
+#- name: Install homebrew package from cask | google-chrome
+#  homebrew_cask:
+#    name: google-chrome
+#    state: present
 
 - name: Install homebrew package from cask | firefox
   homebrew_cask:
