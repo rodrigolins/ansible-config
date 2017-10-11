@@ -38,6 +38,11 @@
     name: stow
     state: latest
 
+- name: Install homebrew package | zsh
+  homebrew:
+    name: zsh
+    state: latest
+
 - name: Install homebrew package from cask | alfred
   homebrew_cask:
     name: alfred
